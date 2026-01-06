@@ -1,0 +1,27 @@
+{
+    "ConnectionSettings": {
+        "DefaultDataSource": "localhost:1521/ORCLPDB1",
+        "DefaultAuthMethod": "OracleAuth",
+        "ConnectionTimeout": 30,
+        "CommandTimeout": 120,
+        "WalletLocation": "C:\\app\\wallet"
+    },
+    "Environments": {
+        "DEV": {
+            "DataSource": "dev-db:1521/DEVDB",
+            "Username": "dev_user"
+        },
+        "HOM": {
+            "DataSource": "hom-db:1521/HOMDB",
+            "Username": "hom_user"
+        },
+        "PRD": {
+            "DataSource": "prd-db:1521/PRDDB",
+            "Username": "prd_user"
+        }
+    },
+    "Queries": {
+        "GetTables": "SELECT table_name FROM user_tables ORDER BY table_name",
+        "GetSchema": "SELECT owner, table_name, tablespace_name FROM all_tables WHERE owner = :schema"
+    }
+}
